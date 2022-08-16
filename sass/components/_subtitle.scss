@@ -1,9 +1,10 @@
 /* заголовки і підзаголовки в секціях*/
 .subtitle {
-    color: var(--title-text-color);
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.16;
+    color: $title-text-color;
+    // font-weight: 700;
+    // font-size: 36px;
+    // line-height: 1.16;
+    @include font($fs: 36px, $lh: 42px);
     text-align: center;
 
 

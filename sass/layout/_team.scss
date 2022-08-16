@@ -1,5 +1,5 @@
 .team {
-    background-color: var(--color-whitegrey-f5f4);
+    background-color: $color-whitegrey-f5f4;
 
 }
 
@@ -13,19 +13,21 @@
 
 
 .card-person__minititle {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.18;
+    // font-weight: 500;
+    // font-size: 16px;
+    // line-height: 1.18;
+    @include font($fw: 500, $lh: 18px);
     text-align: center;
-    color: var(--title-text-color);
+    color: $title-text-color;
 
     margin-bottom: 10px;
 
 }
 
 .card-person__description {
-    font-size: 16px;
-    line-height: 1.18;
+    // font-size: 16px;
+    // line-height: 1.18;
+    @include font($fw: 400, $lh: 18px);
     text-align: center;
     margin-bottom: 16px;
 
@@ -33,7 +35,7 @@
 }
 
 .card-person {
-    background: var(--primary-white-color);
+    background: $primary-white-color;
     flex-basis: calc((100% - 90px) / 4);
 
     /* material shadow v1 */
@@ -56,9 +58,7 @@
 }
 
 .social-list__link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend %align;
     width: 44px;
     height: 44px;
     border-radius: 50%;
@@ -66,14 +66,16 @@
     /* background-color: #fff; */
     color: #AFB1B8;
 
-    transition: color 250ms var(--primary-cubic), background-color 250ms var(--primary-cubic);
+    transition: color 250ms $primary-cubic, background-color 250ms $primary-cubic;
 
-}
 
-.social-list__link:hover,
-.social-list__link:focus {
-    background-color: var(--accent-text-color);
-    color: var(--primary-white-color);
+
+            &:hover,
+            &:focus {
+            background-color: $accent-text-color;
+            color: $primary-white-color;
+            }
+
 }
 
 

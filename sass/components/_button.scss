@@ -1,12 +1,15 @@
+
 .button--primary {
 
     border: none;
-    background-color: var(--accent-text-color);
-    color: var(--primary-white-color);
-    font-family: var(--primary-font);
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.88;
+    background-color: $accent-text-color;
+    color: $primary-white-color;
+    font-family: $primary-font;
+    // font-weight: 700;
+    // font-size: 16px;
+    // line-height: 1.88;
+
+    @include font();
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
@@ -18,24 +21,30 @@
 
     letter-spacing: 0.06em;
 
-    transition: background-color 250ms var(--primary-cubic);
+    transition: background-color 250ms $primary-cubic;
+
+
+    &:hover,
+    &:focus {
+        background-color: $color-hover-button;
+    }
 }
 
-.button-primary:hover,
-.button-primary:focus {
-    background-color: var(--color-hover-button);
-}
+
 
 .button-secondary {
     border: none;
-    color: var(--title-text-color);
-    background-color: var(--color-whitegrey-f5f4);
-    font-family: var(--primary-font);
-    font-weight: 500;
-    font-size: 16px;
-    padding: 6px 22px;
-    line-height: 1.62;
+    color: $title-text-color;
+    background-color: $color-whitegrey-f5f4;
+    font-family: $primary-font;
+    // font-weight: 500;
+    // font-size: 16px;
+    // line-height: 1.62;
+    @include font($fw: 500, $lh: 26px);
+   
 
+    
+    padding: 6px 22px;
     display: inline-block;
     align-items: center;
     text-align: center;
@@ -43,12 +52,14 @@
     border-radius: 4px;
     cursor: pointer;
 
-    transition: background-color 250ms var(--primary-cubic), color 250ms var(--primary-cubic), box-shadow 250ms var(--primary-cubic);
-}
+    transition: background-color 250ms $primary-cubic, color 250ms $primary-cubic, box-shadow 250ms $primary-cubic;
 
-.button-secondary:hover,
-.button-secondary:focus {
-    background-color: var(--accent-text-color);
-    color: var(--primary-white-color);
-    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+
+
+    &:hover,
+    &:focus {
+        background-color: $accent-text-color;
+        color: $primary-white-color;
+        box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    }
 }

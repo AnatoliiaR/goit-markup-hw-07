@@ -1,3 +1,4 @@
+
 /*стилі навігації*/
 
 .menu {
@@ -11,7 +12,7 @@
     position: relative;
 
 
-    color: var(--title-text-color);
+    color: $title-text-color;
     font-weight: 500;
     line-height: 1.14;
     letter-spacing: 0.02em;
@@ -21,31 +22,69 @@
 
 
 
-    transition: color 250ms var(--primary-cubic);
+    transition: color 250ms $primary-cubic;
+
+
+
+    &::after {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        content: '';
+        display: block;
+        width: 100%;
+        height: 4px;
+        background: #2196F3;
+        border-radius: 2px;
+        opacity: 0;
+        transition: opacity 250ms $primary-cubic;
+    }
+
+
+
+
+
+    &:hover,
+    &:focus {
+        color: $accent-text-color;
+
+
+        &::after {
+            opacity: 1;
+        }
+    }
+
+
+
+    /* клас, що підсвічує активну сторінку */
+    .menu__link--current {
+        color: $accent-text-color;
+
+
+        &::after {
+            position: absolute;
+            display: block;
+
+            bottom: 0;
+            width: 100%;
+            height: 4px;
+            background: #2196F3;
+            border-radius: 2px;
+            opacity: 1;
+        }
+
+    }
+
 
 
 }
 
 
-.menu__link::after {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-
-    content: '';
-    display: block;
-    width: 100%;
-    height: 4px;
-    background: #2196F3;
-    border-radius: 2px;
-    opacity: 0;
-    transition: opacity 250ms var(--primary-cubic);
-}
 
 
-.menu__link:hover::after {
-    opacity: 1;
-}
+
+
 
 
 .menu li:not(:last-child) {
@@ -54,29 +93,11 @@
 }
 
 
-.menu__linkk:hover,
-.menu__link:focus {
-    color: var(--accent-text-color);
-}
 
 
-/* клас, що підсвічує активну сторінку */
-.menu__link.menu__link--current {
-    color: var(--accent-text-color);
 
-}
 
-.menu__link.menu__link--current::after {
-    position: absolute;
-    display: block;
 
-    bottom: 0;
-    width: 100%;
-    height: 4px;
-    background: #2196F3;
-    border-radius: 2px;
-    opacity: 1;
-}
 
 .page-header {
     padding-top: 24px;
@@ -96,7 +117,7 @@
 
     border-bottom-width: 1px;
     border-bottom-style: solid;
-    border-bottom-color: var(--color-white-rich);
+    border-bottom-color: $color-white-rich;
 }
 
 .page-header__nav {
@@ -109,7 +130,7 @@
 
 
 .cont-nav__link {
-    color: var(--primary-text-color);
+    color: $primary-text-color;
     font-weight: 500;
     line-height: 1.14;
     letter-spacing: 0.02em;
@@ -117,28 +138,31 @@
 
 
     /* задается в базовый класс, анимация перехода */
-    transition: color 250ms var(--primary-cubic);
+    transition: color 250ms $primary-cubic;
+
+
+    &:hover,
+    &:focus {
+        color: $accent-text-color;
+    }
 
 }
 
-.cont-nav li:not(:last-child) {
-    margin-right: 50px;
-}
+
 
 .cont-nav {
-    display: flex;
-    margin-left: auto;
+    @extend %align;
 
-    align-items: center;
+    margin-left: auto;    
     align-self: center;
-    justify-content: center;
-    /* transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+    
+    
+    li:not(:last-child) {
+        margin-right: 50px;
+    }
 }
 
-.cont-nav__link:hover,
-.cont-nav__link:focus {
-    color: var(--accent-text-color);
-}
+
 
 
 .cont-nav__icon {

@@ -66,10 +66,10 @@ html {
 
 body {
 
-    background-color: var(--primary-white-color);
-    font-family: var(--primary-font);
-    font-size: var(--primary-font-size);
-    color: var(--primary-text-color);
+    background-color: $primary-white-color;
+    font-family: $primary-font;
+    font-size: $primary-font-size;
+    color: $primary-text-color;
     letter-spacing: 0.03em;
 
 

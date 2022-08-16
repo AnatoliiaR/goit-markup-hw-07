@@ -1,3 +1,4 @@
+
 .backdrop {
     position: fixed;
     top: 0;
@@ -7,18 +8,18 @@
     background-color: rgba(0, 0, 0, 0.2);
     visibility: visible;
     opacity: 1;
-    transition: opacity 250ms var(--primary-cubic), visibility 250ms var(--primary-cubic);
-}
+    transition: opacity 250ms $primary-cubic, visibility 250ms $primary-cubic;
 
 
-.backdrop.backdrop--hidden {
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
+    &.backdrop--hidden {
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
 
-}
+    }
 
+    &.backdrop--hidden .modal {
+        transform: scale(0.6) translate(-50%, -50%);
+    }
 
-.backdrop.backdrop--hidden .modal {
-    transform: scale(0.6) translate(-50%, -50%);
 }

@@ -1,10 +1,11 @@
 /* задаємо стилі логотипу */
 .logo {
-    color: var(--title-text-color);
+    color: $title-text-color;
     font-family: Raleway, sans-serif;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 1.19;
+    // font-weight: 700;
+    // font-size: 26px;
+    // line-height: 1.19;
+    @include font($fs: 26px);
     text-decoration: none;
 
     margin-right: 93px;
@@ -12,9 +13,9 @@
 }
 
 .logo--accent {
-    color: var(--accent-text-color);
+    color: $accent-text-color;
 }
 
 .logo--inverse {
-    color: var(--primary-white-color);
+    color: $primary-white-color;
 }
